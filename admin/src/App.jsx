@@ -1,14 +1,17 @@
-import React from 'react'
-import { Navbar } from './component/Navbar/Navbar'
-import { Sidebar } from './component/Sidebar/Sidebar'
-import { Route, Routes } from 'react-router-dom'
-import { Add } from './pages/Add/Add'
-import { Order } from './pages/Orders/Order'
-import { List } from './pages/List/List'
-import { ToastContainer} from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
+import React from 'react';
+import { Navigate, Routes, Route } from 'react-router-dom'; // Added Navigate
+import Navbar from './components/Navbar/Navbar';
+import Sidebar from './components/Sidebar/Sidebar';
+import Add from './pages/Add/Add';
+import List from './pages/List/List';
+import Orders from './pages/Orders/Orders';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 const App = () => {
-  const url = "http://localhost:4000";
+  // const url = "https://food-express-backend1.onrender.com";
+     const url = "http://localhost:4000";
+
   return (
     <div>
       <ToastContainer />
@@ -16,14 +19,20 @@ const App = () => {
       <hr />
       <div className="app-content">
         <Sidebar />
-        <Routes>
-          <Route path="/add" element={<Add url={url} />} />
-          <Route path="/list" element={<List url={url} />} />
-          <Route path="/orders" element={<Order url={url} />} />
-        </Routes>
+        <div className="main-content">
+          <Routes>
+            {/* Default Route */}
+            <Route path="/" element={<Navigate to="/add" />} />
+            
+            {/* Other Routes */}
+            <Route path="/add" element={<Add url={url} />} />
+            <Route path="/list" element={<List url={url} />} />
+            <Route path="/orders" element={<Orders url={url} />} />
+          </Routes>
+        </div>
       </div>
     </div>
   );
-}
+};
 
 export default App;

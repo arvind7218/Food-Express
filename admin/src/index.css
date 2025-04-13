@@ -1,37 +1,60 @@
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
 
-*{
+* {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  font-family: Outfit;
-
+  font-family: 'Outfit', sans-serif;
 }
 
-body{
+body {
   min-height: 100vh;
   background-color: #fcfcfc;
 }
 
-a{
+a {
   text-decoration: none;
   color: inherit;
 }
 
-hr{
+hr {
   border: none;
   height: 1px;
   background-color: #a9a9a9;
-
 }
 
-.app-content{
+.app-container {
   display: flex;
-  
+  flex-direction: column;
 }
 
-.flex-col{
+.app-content {
+  display: flex;
+  width: 100%;
+  min-height: 100vh;
+}
+
+.sidebar {
+  width: 20%;
+  border-right: 1.5px solid #a9a9a9;
+}
+
+.main-content {
+  flex-grow: 1;
+  padding: 20px;
+  background-color: #f9f9f9;
+  overflow-y: auto;
+  min-height: 100vh;
+}
+
+.flex-col {
   display: flex;
   flex-direction: column;
   gap: 10px;
 }
+
+.cursor {
+  cursor: pointer;
+}
+
+/* Responsive Grid Layout for order item */
