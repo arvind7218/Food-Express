@@ -4,31 +4,28 @@ import fs from "fs";
 
 //add food item
 
-const addFood = async(req,res)=>{
-    
+const addFood = async (req, res) => {
     try {
-        let image_filename = "";
-        if (req.file) {
-            image_filename = req.file.filename;
-        } else {
-            throw new Error("No file uploaded");
-        }
-
-        const food = new foodModel({
-            name: req.body.name,
-            description: req.body.description,
-            price: req.body.price,
-            category: req.body.category,
-            image: image_filename
-        });
-
-        await food.save();
-        res.json({ success: true, message: "Food Added" });
+      if (!req.file) {
+        throw new Error("Image file is required");
+      }
+  
+      const food = new foodModel({
+        name: req.body.name,
+        description: req.body.description,
+        price: req.body.price,
+        category: req.body.category,
+        image: req.file.path, // Cloudinary image URL
+      });
+  
+      await food.save();
+      res.json({ success: true, message: "Food Added" });
     } catch (error) {
-        console.log(error);
-        res.status(400).json({ success: false, message: error.message });
+      console.error(error);
+      res.status(400).json({ success: false, message: error.message });
     }
-}
+  };
+  
 
 //all food list 
 const listFood = async(req,res)=>{
