@@ -17,6 +17,7 @@ const addFood = async (req, res) => {
         category: req.body.category,
         image: req.file.path, // Cloudinary image URL
       });
+      
   
       await food.save();
       res.json({ success: true, message: "Food Added" });
