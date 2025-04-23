@@ -1,62 +1,81 @@
-.header{
+.header-slider {
+    width: 100%;
     height: 34vw;
-    margin: 30px auto;
-    background: url('../../assets/header_img.png') no-repeat;
-    background-size: contain;
+    overflow: hidden;
     position: relative;
 }
-.header-content{
-    position:absolute;  
-    display:flex;
-    flex-direction: column;
-    align-items: start;
-    gap: 1.5vw;
-    max-width: 50%;
+
+.slider-track {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    transition: transform 1s ease-in-out;
+}
+
+.slide {
+    flex: 0 0 100%;
+    height: 100%;
+    position: relative;
+}
+
+.slide-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.header-content {
+    position: absolute;
     bottom: 18%;
     left: 6vw;
-    animation: fadeIn 3s;
-}
-
-.header-content h2{
-    font-weight: 500;
+    max-width: 50%;
+    padding: 2vw;
+    background: rgba(0, 0, 0, 0.4);
+    border-radius: 12px;
     color: white;
-    font-size: max(4.5vw,22px);
+    display: flex;
+    flex-direction: column;
+    gap: 1vw;
 }
 
-.header-content p{
-    color: white;
-    font-size: 1vw;
-
+.header-content h2 {
+    font-size: max(4vw, 22px);
+    color: #ffe600;
 }
 
-.header-content button{
+.header-content p {
+    font-size: max(1vw, 14px);
+}
+
+.header-content a button {
+    padding: 1vw 2.5vw;
+    font-size: max(1vw, 13px);
     border: none;
-    color:#747474;
-    font-weight: 500;
-    padding:1vw 2.3vw;
-    background-color: white;
-    font-size: max(1vw,13px);
     border-radius: 50px;
+    background: linear-gradient(90deg, #ff5722, #ff9800);
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s ease;
 }
 
-@media (max-width:1050px){
-   
-    .header-content{
-        max-width: 45%;
-        
-    }
+.header-content a button:hover {
+    background: linear-gradient(90deg, #ff9800, #ff5722);
 }
 
-@media (max-width:750px) {
-    
+@media (max-width: 750px) {
     .header-content {
-        max-width: 65%;
+        max-width: 70%;
+        max-height: 90%;
+        padding: 3vw;
     }
-    .header-content p{
+
+    .header-content p {
         display: none;
     }
-    .header-content button{
-        padding: 2vw 4vw;
 
+    .header-content button {
+        padding: 2vw 4vw;
     }
 }

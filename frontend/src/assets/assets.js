@@ -1,6 +1,12 @@
 import basket_icon from './basket_icon.png'
 import logo from './logo.png'
 import header_img from './header_img.png'
+import header_img2 from './header_img2.png'
+import header_img1 from './header_img1.png'
+import header_img3 from './header_img3.png'
+import header_img4 from './header_img4.png'
+import header_img5 from './header_img5.png'
+import header_img6 from './header_img6.png'
 import search_icon from './search_icon.png'
 import menu_1 from './menu_1.png'
 import menu_2 from './menu_2.png'
@@ -10,7 +16,6 @@ import menu_5 from './menu_5.png'
 import menu_6 from './menu_6.png'
 import menu_7 from './menu_7.png'
 import menu_8 from './menu_8.png'
-
 import food_1 from './food_1.png'
 import food_2 from './food_2.png'
 import food_3 from './food_3.png'
@@ -69,6 +74,12 @@ export const assets = {
     logo,
     basket_icon,
     header_img,
+    header_img1,
+    header_img2,
+    header_img3,
+    header_img4,
+    header_img5,
+    header_img6,
     search_icon,
     rating_starts,
     add_icon_green,
